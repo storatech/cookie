@@ -3,8 +3,8 @@
     "lib": [
       "es2020"
     ],
-    "moduleResolution": "bundler",
-    "target": "es2020",
+    "moduleResolution": "node",
+    "target": "es5",
     "outDir": "dist",
     "rootDir": "src",
     "strict": true,
