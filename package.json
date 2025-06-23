@@ -1,16 +1,21 @@
 {
   "name": "cookie",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "HTTP server cookie parsing and serialization",
   "keywords": [
     "cookie",
     "cookies"
   ],
-  "repository": "jshttp/cookie",
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com:storatech/stora-ui.git",
+    "directory": "@storatech/stora-ui"
+  },
   "license": "MIT",
   "author": "Roman Shtylman <shtylman@gmail.com>",
   "contributors": [
-    "Douglas Christopher Wilson <doug@somethingdoug.com>"
+    "Douglas Christopher Wilson <doug@somethingdoug.com>",
+    "Batmend Ganbaatar <batmend@gege.mn>"
   ],
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -19,15 +24,15 @@
   ],
   "scripts": {
     "bench": "vitest bench",
-    "build": "ts-scripts build",
-    "format": "ts-scripts format",
-    "prepare": "ts-scripts install",
-    "prepublishOnly": "npm run build",
-    "specs": "ts-scripts specs",
-    "test": "ts-scripts test"
+    "prebuild": "vitest run",
+    "build": "tsc --build",
+    "prepublishOnly": "pnpm build",
+    "test": "vitest"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
   },
   "devDependencies": {
-    "@borderless/ts-scripts": "^0.15.0",
     "@vitest/coverage-v8": "^2.1.2",
     "top-sites": "1.1.194",
     "typescript": "^5.6.2",
@@ -35,8 +40,5 @@
   },
   "engines": {
     "node": ">=18"
-  },
-  "ts-scripts": {
-    "project": "tsconfig.build.json"
   }
 }

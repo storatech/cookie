@@ -10,25 +10,25 @@ Basic HTTP cookie parser and serializer for HTTP servers.
 ## Installation
 
 ```sh
-$ npm install cookie
+pnpm add @storatech/cookie
 ```
 
 ## API
 
 ```js
-const cookie = require("cookie");
-// import * as cookie from 'cookie';
+const cookie = require("@storatech/cookie");
+// import * as cookie from '@storatech/cookie';
 ```
 
 ### cookie.parse(str, options)
 
-Parse a HTTP `Cookie` header string and returning an object of all cookie name-value pairs.
+Parse a HTTP `Cookie` header string and returning an object of all cookie name-values pairs.
 The `str` argument is the string representing a `Cookie` header value and `options` is an
 optional object containing additional parsing options.
 
 ```js
 const cookies = cookie.parse("foo=bar; equation=E%3Dmc%5E2");
-// { foo: 'bar', equation: 'E=mc^2' }
+// { foo: ['bar'], equation: ['E=mc^2'] }
 ```
 
 #### Options

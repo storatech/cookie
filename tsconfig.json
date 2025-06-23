@@ -1,9 +1,16 @@
 {
-  "extends": "@borderless/ts-scripts/configs/tsconfig.json",
   "compilerOptions": {
+    "lib": [
+      "es2020"
+    ],
+    "moduleResolution": "bundler",
+    "target": "es2020",
     "outDir": "dist",
     "rootDir": "src",
-    "resolveJsonModule": true
+    "strict": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true
   },
-  "include": ["src/**/*"]
+  "include": ["src/**/*"],
+  "exclude": ["node_modules", "dist", "src/**/*.spec.ts", "src/**/*.test.ts", "src/**/*.bench.ts"]
 }

@@ -34,7 +34,7 @@ describe("parse", () => {
 describe("parse top-sites", () => {
   Object.entries(top).forEach(function ([domain, value]) {
     bench("parse " + domain, () => {
-      cookie.parse(value);
+      cookie.parse(value as string);
     });
   });
 });
